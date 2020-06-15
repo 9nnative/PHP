@@ -11,3 +11,15 @@ Mercedes
 !! Installer Laragon !!
 */
 
+$array = [
+    &a[1] = "Peugeot"; 
+    &a[2] = "Renault";
+    &a[3] = "BMW";
+    &a[4] = "Mercedes";
+];
+
+$marques(count($a));
+
+echo "Il y a $marques de voitures dans le tableau :
+
+
