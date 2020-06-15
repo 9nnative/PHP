@@ -76,3 +76,5 @@ $prenoms2 = [1 => "Virgile",2 => "Stéphane", 3 => "Micka"];
 foreach ($prenoms2 as $id => $prenom) { //foreach($array as $key => $value) $key = clé, $value = valeur
     echo "$id : $prenom";
 }
+
+
