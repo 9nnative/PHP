@@ -51,7 +51,7 @@ if ($total > 30) {
 $prenoms = ["Michel","Marie","Julie"];
 echo $prenoms[0]; // Affichera Michel
 echo count($prenoms); // Affichera 3
-$longueurtableau = count($prenoms)
+$longueurtableau = count($prenoms);
 
 for ($i=0; $i < $longueurtableau; $i++) { // $i++ équivaut à écrire $i = $i + 1 (incrémentation)
     echo $prenoms[$i]."<br>";
@@ -76,5 +76,3 @@ $prenoms2 = [1 => "Virgile",2 => "Stéphane", 3 => "Micka"];
 foreach ($prenoms2 as $id => $prenom) { //foreach($array as $key => $value) $key = clé, $value = valeur
     echo "$id : $prenom";
 }
-
-

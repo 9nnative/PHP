@@ -4,7 +4,7 @@
 
 $phrase = "Notre formation DL commence aujourd'hui";
 $phrase2 = "Notre formation DL commence demain";
-echo "La phrase $phrase contient ".strlen($phrase)." caractères" <br>;
-echo "La phrase $phrase2 contient ".strlen($phrase)." caractères" <br>;
+echo "La phrase $phrase contient ".strlen($phrase)." caractères"."<br>";
+echo "La phrase $phrase2 contient ".strlen($phrase2)." caractères"."<br>";
 
 ?>
