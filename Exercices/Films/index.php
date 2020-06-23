@@ -11,15 +11,19 @@
 
     include 'class/Films.php';
     include 'class/Genres.php';
+    include 'class/Rea.php';
 
     $sf= new Genres("Science fiction");
+    $ac= new Genres("Action");
+    $realisateur= new Rea("Peter Jackson","31-10-1961");
 
-    $f1 = new Films("Seigneur des Anneaux", "14-09-2001",220,$sf,"");
-    $f2 = new Films("300","05-08-2006",145 ,$sf,"");
+    $f1 = new Films("Seigneur des Anneaux", "14-09-2001",220);
+    $f2 = new Films("300","05-08-2006",145);
     
-    echo $f1;
-    echo $f2;
+    
+    echo $f1.$sf.$realisateur;
+    echo $f2.$ac.$realisateur;
 
-
+?>
 
 
