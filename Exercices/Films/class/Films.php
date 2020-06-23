@@ -77,7 +77,7 @@
      */ 
     public function getGenre()
     {
-        return $this->genre;
+        return $this;
     }
 
     /**
@@ -93,6 +93,6 @@
     }
 
     public function __toString() {
-        return "Le film ".$this->titre.", sorti le ".$this->getDatedesortie()." dure ".$this->getDuree()."<br>";
+        return "Le film ".$this->titre.", sorti le ".$this->getDatedesortie()." dure ".$this->getDuree().". Ce film de type ".$this->getGenre()." a été réalisé par ".$this->realisateur."<br>";
     }
 }
