@@ -22,4 +22,4 @@ $marques(count($a));
 
 echo "Il y a $marques de voitures dans le tableau :
 
-
+?>
