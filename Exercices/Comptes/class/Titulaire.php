@@ -12,7 +12,7 @@ class Titulaire{
   
 //array push
 
-    public  function __construct($nom, $prenom, $datenaissance, $ville) { 
+    public  function __construct($nom="", $prenom="", $datenaissance="", $ville="") { 
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->datenaissance = new DateTime($datenaissance);      //permet de cibler les attributs de la classe
@@ -22,6 +22,7 @@ class Titulaire{
 
     }
 
+    
     public function getNom()
     {
         return $this->nom;
@@ -110,11 +111,14 @@ class Titulaire{
 
     public function __toString(){
 
-        echo "Nom du titulaire : ".$this->nom."<br>"."Prénom : ".$this->prenom."<br>"."âge: ".$this->getAge()." ans"."<br>";
+        $info = "Nom du titulaire : ".$this->nom."<br>"."Prénom : ".$this->prenom."<br>"."âge: ".$this->getAge()." ans"."<br>";
 
         
         foreach($this->comptes as $compte){
-            return "Libellé du compte : ".$compte->getLibelle()."<br>"."Solde initial : ".$compte->getSoldeini().$compte->getDevise()."<br>";
+
+            $info.= "Libellé du compte : ".$compte->getLibelle()."<br>"."Solde initial : ".$compte->getSoldeini().$compte->getDevise()."<br>";
+
         }
+        return $info;
     }
     } 

@@ -10,13 +10,14 @@ class Comptebanquaire{
     private $devise;
     private $titulaire;
 
+//CREDITER/DEBITER
 
-    public  function __construct($libelle, $soldeini, $devise, $titulaire) { 
+    public  function __construct($libelle="", $soldeini="", $devise="", $titulaire) { 
         $this->libelle = $libelle;
         $this->soldeini = $soldeini;
         $this->devise = $devise;      //permet de cibler les attributs de la classe
         $this->titulaire = $titulaire;
-        $titulaire-> addCompte($this);
+        $titulaire->addCompte($this);
     } 
 
 
@@ -41,10 +42,26 @@ class Comptebanquaire{
     public function setSoldeini($soldeini)
     {
         $this->soldeini = $soldeini;
+        
+
 
         return $this;
     }
 
+    public function crediter($somme){
+        $this->soldeini += $somme;
+            
+    }
+
+    public function debiter($somme){
+        $this->soldeini -= $somme;
+            
+    }
+    public function Virement($somme, $compte){
+        $compte->debiter($somme);
+        $this->crediter($somme);
+            
+    }
 
     public function getDevise()
     {
@@ -55,7 +72,7 @@ class Comptebanquaire{
     public function setDevise($devise)
     {
         $this->devise = $devise;
-
+        
         return $this;
     }
 
@@ -71,5 +88,4 @@ class Comptebanquaire{
 
         return $this;
     }
-
 }
