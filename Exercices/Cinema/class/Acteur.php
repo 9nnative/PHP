@@ -10,18 +10,16 @@ class Acteur extends Personne{
 
 private $filmsowned;
 
+public function __construct(string $nom="",string $prenom="",string $datedenaissance=""){
+parent::__construct($nom, $prenom, $datedenaissance);
+$this->filmsowned = [];
 
-                public function __construct(string $nom="",string $prenom="",string $datedenaissance=""){
-                    parent::__construct($nom, $prenom, $datedenaissance);
-                    $this->filmsowned = [];
-                    
-                    
-                }
+}
 
                 
 public function addFilmsOwned($film){
-    // $this->filmsowned[] = $film;
-    array_push($this->filmsowned, $film);
+// $this->filmsowned[] = $film;
+array_push($this->filmsowned, $film);
 }
 
 public function totalFilmsOwnedbyActeur(){

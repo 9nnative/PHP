@@ -1,0 +1,45 @@
+1)
+SELECT nom_lieu, COUNT(*) 
+FROM villageois v, lieu l 
+WHERE v.ID_LIEU = l.ID_LIEU 
+GROUP BY nom_lieu
+2)
+SELECT nom, nom_lieu, nom_specialite
+FROM villageois v, lieu l, specialite s
+WHERE v.ID_LIEU = l.ID_LIEU
+AND V.ID_VILLAGEOIS = s.ID_SPECIALITE
+ORDER BY nom_specialite, nom
+3)
+SELECT nom_specialite, COUNT(*) AS nb
+FROM villageois v, specialite s 
+WHERE v.ID_SPECIALITE = s.ID_SPECIALITE 
+GROUP BY nom_specialite 
+ORDER BY nb DESC
+4)
+SELECT nom_bataille, nom_lieu, DATE_FORMAT(date_bataille,"%d/%m/%Y") 
+FROM bataille b, lieu l 
+WHERE b.ID_LIEU = l.ID_LIEU
+5)
+SELECT nom_potion, SUM(cout_ingredient*qte) AS prixtotal 
+FROM potion p, ingredient i, compose c
+WHERE p.ID_POTION = c.ID_POTION 
+AND i.ID_INGREDIENT = c.ID_INGREDIENT
+GROUP BY nom_potion
+ORDER BY prixtotal DESC 
+6)
+SELECT COUNT(qte) as totalQTE, nom_potion, SUM(cout_ingredient*qte) AS prixtotal
+FROM potion p, ingredient i, compose c
+WHERE p.ID_POTION = 15 
+AND i.ID_INGREDIENT = c.ID_INGREDIENT
+GROUP BY nom_potion
+ORDER BY prixtotal DESC
+7)
+        !------------------!
+8)
+SELECT nom, SUM(dose) AS totaldose
+FROM villageois v, boit b
+WHERE v.ID_VILLAGEOIS = b.ID_VILLAGEOIS
+GROUP BY nom
+ORDER BY totaldose DESC
+
+

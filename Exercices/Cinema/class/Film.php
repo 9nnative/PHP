@@ -15,6 +15,8 @@ class Film {
     private $realisateur;
     private $genre;
     private $acteur;
+    private $casting;
+
                     public function __construct(string $titrefilm, string $anneesortie, int $duree,string $synopsis, Real $realisateur, Genre $genre, Acteur $acteur)
                     {
                             $this->titrefilm = $titrefilm; 
@@ -24,6 +26,7 @@ class Film {
                             $this->realisateur= $realisateur;
                             $realisateur->addFilmsOwned($this);
                             $acteur->addFilmsOwned($this);
+                            $genre->addFilmsParGenre($this);
                             $this->genre= $genre;
                     }
 

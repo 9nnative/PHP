@@ -50,8 +50,5 @@ public function totalFilmsOwned(){
     }
 
 }
-public function __toString()
-{
-    return $this->getNom()." ".$this->getPrenom();
-}
+
 }

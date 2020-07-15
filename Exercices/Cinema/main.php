@@ -19,7 +19,6 @@
 // Genre :
 // • nom du genre
 
-
 // On doit pouvoir afficher :
 // • tous les films d'un réalisateur
 // • tous les films d'un acteur (film + nom du rôle)
@@ -27,7 +26,6 @@
 // • la liste des rôles d'un acteur (nom du rôle et titre du film)
 // • toutes les informations d'un film (titre, année, durée en HH:MM, genre, liste des acteurs (nom + prénom), réalisateur (nom + prénom))
 // • la liste des acteurs ayant incarné un rôle précis (nom + prénom de l'acteur et film dans lequel le rôle a été incarné)
-
 
 spl_autoload_register(function ($class_name) {
     include "class/". $class_name . '.php';
@@ -47,11 +45,14 @@ $a2 = new Acteur("Steegh","Paulp","05-09-1978");
 $a3 = new Acteur("Steegeeeeh","Pausdfl","15-09-1971");
 $a4 = new Acteur("Steexgh","Paul","05-09-1878");
 
-
 $f1 = new Film("300", "2006", 117, "En 485 avant notre ère, Xerxès succède à Darius Ier sur le trône de l'empire perse. Rapidement, les grandes cités grecques comprennent qu'une nouvelle guerre s'annonce. Athènes, Thèbes, Corinthe et Délos se rallient à Sparte qui dispose de la meilleure armée. En 480, le roi spartiate Léonidas est nommé commandant en chef de cette union militaire de la dernière chance. Lorsque la flotte perse rallie les fantassins de Xerxès, les troupes grecques prennent peur.", $r1 , $g1, $a1);
 $f2 = new Film("Man of Steel", "2013", 148, "Un petit garçon découvre qu'il possède des pouvoirs surnaturels et qu'il n'est pas né sur Terre. Plus tard, il s'engage dans un périple afin de comprendre d'où il vient et pourquoi il a été envoyé sur notre planète mais il devra devenir un héros s'il veut sauver le monde de la destruction totale et incarner l'espoir pour toute l'humanité.", $r1, $g2, $a1);
 $f3 = new Film("Winnie da bear", "2002", 121, "Ce genre d'ourson!", $r2, $g2, $a4);
 $f4 = new Film("Avatar","2013",210, "Des Shtroumpfs bleus ??? naaaan", $r4, $g3, $a4);
+
+$c1 = new Casting($r1,$a3,$f2);
+$c2 = new Casting($r2,$a2,$f2);
+$c3 = new Casting($r1,$a2,$f3);
 
 
 // pour tous les films qui contiennent X réalisateur, afficher : films   
@@ -59,7 +60,15 @@ $f4 = new Film("Avatar","2013",210, "Des Shtroumpfs bleus ??? naaaan", $r4, $g3,
 
 echo "Le réalisateur <strong>".$r1."</strong> a écrit les films suivants :<br>"; 
 $r1->totalFilmsOwned();
+
 echo "<br>L'acteur <strong>".$a4."</strong> a joué les films suivants :<br>"; 
-$a4->totalFilmsOwnedbyActeur();
+$a4->totalFilmsOwnedbyActeur(); 
+
+echo "<br>Voici tous les films du genre <strong>".$g2."</strong>:<br>"; 
+$g2->totalFilmsParGenre();
+
+//la liste des rôles d'un acteur (nom du rôle et titre du film)
+echo "<br>Liste des rôles de l'acteur <strong>".$a2."<strong> :<br>";
+$c1->totalRolesParActeur();
 
 
