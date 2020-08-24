@@ -1,0 +1,32 @@
+h1{
+    text-align : center;
+}
+
+h2 {
+    color: red;
+    text-align: center;
+}
+
+.lien{
+    text-decoration : none;
+    color : gray;
+
+}
+
+#contenu{
+    text-align : center;
+}
+
+.unchecked{
+    color: rgb(163, 163, 163);
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+#liste{
+    margin-right: 40%;
+    margin-left: 40%;
+}
