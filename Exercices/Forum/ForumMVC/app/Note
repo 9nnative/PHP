@@ -1,0 +1,21 @@
+Chacun va avoir un rôle bien défini et complémentaire par rapport aux autres.
+
+DAO -> Paramètres de connexion 
+
+Méthode GetConnection pour créer la PDO, Gestion des erreurs. Puis on retourne l'objet de connexion?
+
+L'anti slash devant un nom  de classe permet d'appeler des classes Natives de PHP, ça permet de lever les ambiguités.
+
+Classes Abstraites : N'est jamais instanciée. Définit des concepts de base, générique. 
+
+Abstract Manager : Jamais de New, pas d'instanciacion. Propriété d'une classe abstraite est statique. Les propriétées sont que modifiable là dedans. (ex: public static function...)
+
+Il va falloir définir tous les scénarios possibles.
+
+Protected veut dire que la méthode sera uniquement exploitable dans les classes enfant. 
+
+Autoloader : Auto chargement de classe, permet d'eviter de faire des require once pour chaque classe utilisée.
+
+Le routeur : Si action -> Alors. (avec URL) 
+ 
+
