@@ -50,4 +50,17 @@
                 "titrePage" => "FORUM | ".$topic
             ];
         }
+
+        public function Home(){
+            $manTopic = new TopicManager();
+            $topics = $manTopic->findAll();
+          
+            return [
+                "view" => "forum/listTopics.php", 
+                "data" => [
+                    "topics" => $topics
+                ],
+                "titrePage" => "FORUM | Sujets"
+            ];
+        }
     }
