@@ -1,2 +1,3 @@
-function GoBack(){
-header("location:javascript://history.go(-1)")}
+function goBack() {
+    window.history.go(-1);
+  }
