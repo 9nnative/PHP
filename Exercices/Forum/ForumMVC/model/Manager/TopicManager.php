@@ -37,5 +37,17 @@
                 self::$classname
             );
         }
+        public function addTopic($array){
+            $sql = "INSERT INTO sujet (titreSujet, visiteur_id) VALUE (:titreSujet, :visiteur)"; 
+           
+          //  return self::getOneOrNullResult(
+            return self::create($sql, [
+                'titreSujet' => $array["titreSujet"],
+                'visiteur' => $array["visiteur"]
+          //    'user_id' => Session::getUser()->getId(),
+
+            ]);
+
+        }
 
     }

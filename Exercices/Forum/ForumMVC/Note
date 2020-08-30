@@ -1,0 +1,3 @@
+Finir TopicManager.php, ligne 44 : Changer le nom des id pour les array envoyées
+à la BDD.
+Finir les Login et MDP.

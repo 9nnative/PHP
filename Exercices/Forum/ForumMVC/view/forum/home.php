@@ -7,7 +7,10 @@
 </head>
 <body>
 
-    <p>CA MARCHE<p>
+    <p>It works!<p>
     <p><a class="uk-button uk-button-default" href="?ctrl=forum&method=allTopics">Accéder aux sujets</a></p>
+    <p><a class="uk-button uk-button-default" href="?ctrl=forum&method=create">Ajouter un message</a></p>
+    <p><a class="uk-button uk-button-default" href="?ctrl=forum&method=allTopics">Se connecter</a></p>
+    <p><a class="uk-button uk-button-default" href="?ctrl=forum&method=allTopics">S'inscrire</a></p>
 </body>
 </html>
