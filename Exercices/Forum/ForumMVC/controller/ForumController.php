@@ -63,5 +63,25 @@
                 "titrePage" => "FORUM | Sujets"
             ];
         }
+        public function create(){
+            
+            $id = (isset($_GET['id'])) ? $_GET['id'] : null;
+            $manTopic = new TopicManager();
+            //var_dump($_POST["titreSujet"]);
+            $manTopic->addTopic($_POST);
 
+            //permet de revenir a la page d'accueil
+            Router::redirectTo("home","index");
+
+           // ["titreSujet"]
+            
+        
+        }
+        
+        public function addTopic(){
+            return [
+                "view" => "forum/addTopic.php",
+                "titrePage" => "FORUM | Ajouter un topic"
+            ];
+        }
     }
