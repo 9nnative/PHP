@@ -28,13 +28,38 @@ use App\Router;
 
     $result = Router::handleRequest($_GET);
 
+
     if(is_array($result) && array_key_exists('view', $result)){
         $data = isset($result['data']) ? $result['data'] : null;
         include VIEW_PATH.$result['view'];
         $titrePage = isset($result['titrePage']) ? $result['titrePage'] : null;
+        
+         
+     
     }
+    
 
-    $page = ob_get_contents();
-    \ob_end_clean();
+    // if(isset($_GET['action'])){
 
-    require VIEW_PATH."layout.php"; // require "./view/layout.php"
+    //     switch($_GET['action']){
+    //         case "listTopics" : $ctrlTopics->allTopics(); break;
+
+    //     }
+    // }
+    //     else 
+
+    //     {$ctrlTopics->findAll();
+        
+    //     }
+
+
+        $page = ob_get_contents();
+        \ob_end_clean();
+
+        require VIEW_PATH."layout.php"; // require "./view/layout.php"
+
+
+
+    
+
+  

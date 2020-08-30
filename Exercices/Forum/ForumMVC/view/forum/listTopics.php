@@ -7,10 +7,11 @@
     </script>
 </head>
 <body>
-<?php var_dump($data["topics"])
-
-?>
-    <p>CA MARCHE 2<p>
-    <p><a  onclick="goBack()">Retour</a></p>
+<?php foreach($data['topics'] as $topic){
+   echo $topic->getTitle().'<br/>';
+    // var_dump($topic);
+    
+} ?>
+    <p><a class="uk-button uk-button-default" href="?ctrl=home&method=index">Retour</a></p>
 </body>
 </html>

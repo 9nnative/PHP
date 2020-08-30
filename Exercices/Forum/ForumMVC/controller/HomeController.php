@@ -22,7 +22,7 @@
          */
         public function rules(){
             return [
-                "view" => "rules.php",
+                "view" => "forum/rules.php",
                 "data" => null,
                 "titrePage" => "FORUM | Réglement du forum"
             ];
@@ -33,7 +33,7 @@
          */
         public function mentions(){
             return [
-                "view" => "mentions.php",
+                "view" => "forum/mentions.php",
                 "data" => null,
                 "titrePage" => "FORUM | Mentions légales"
             ];
