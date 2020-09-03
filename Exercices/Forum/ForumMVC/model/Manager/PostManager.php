@@ -27,8 +27,7 @@
         }
 
         public function findOneById($id){
-            $sql = "SELECT * 
-                        FROM post 
+            $sql = "SELECT * FROM post 
                         WHERE id = :id";
             return self::getOneOrNullResult(
                 self::select($sql, 
@@ -38,5 +37,7 @@
                 self::$classname
             );
         }
+
+       
 
     }

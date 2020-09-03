@@ -12,7 +12,7 @@
     require "SecurityController.php";
 
 
-    // --TESTE-- //
+    // --TEST-- //
 
 /*
         if(!empty($_POST)){

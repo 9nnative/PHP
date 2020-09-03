@@ -38,4 +38,6 @@
                 "titrePage" => "FORUM | Mentions légales"
             ];
         }
+       
+        
     }

@@ -33,9 +33,6 @@ use App\Router;
         $data = isset($result['data']) ? $result['data'] : null;
         include VIEW_PATH.$result['view'];
         $titrePage = isset($result['titrePage']) ? $result['titrePage'] : null;
-        
-         
-     
     }
     
 

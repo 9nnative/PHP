@@ -29,6 +29,13 @@
             ];
         }
 
+        //afficher le nombre de posts par topic
+
+        public function countTopics(){
+
+            
+        }
+
         /**
          * Afficher les posts d'un topic
          */
@@ -67,13 +74,19 @@
             
             $id = (isset($_GET['id'])) ? $_GET['id'] : null;
             $manTopic = new TopicManager();
-            //var_dump($_POST["titreSujet"]);
-            $manTopic->addTopic($_POST);
+            //var_dump($_POST["titre"]);
+            $topics = $manTopic->findAll();
+
+
 
             //permet de revenir a la page d'accueil
-            Router::redirectTo("home","index");
+            //Router::redirectTo("home","index");
 
-           // ["titreSujet"]
+           return [
+               "view" => "forum/addTopic.php",
+               "data" => ["topics" =>$topics],
+               "titrePage" => "FORUM | Créer un sujet"
+           ];
             
         
         }
@@ -82,6 +95,14 @@
             return [
                 "view" => "forum/addTopic.php",
                 "titrePage" => "FORUM | Ajouter un topic"
+            ];
+        }
+
+        public function LoginForm(){
+            return [
+                "view" => "forum/login_form.php",
+                "data" => null,
+                "titrePage" => "FORUM | Se connecter"
             ];
         }
     }

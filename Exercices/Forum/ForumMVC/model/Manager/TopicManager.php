@@ -13,8 +13,9 @@
 
         public function findAll(){
 
-            $sql = "SELECT t.id, title, t.date, t.closed, t.resolved, t.user_id
-                    FROM topic t";
+            $sql = "SELECT t.id, t.title, t.date, t.closed, t.resolved, t.user_id
+                        FROM topic t
+                    ORDER BY date DESC";
 
             return self::getResults(
                 self::select($sql,
@@ -38,12 +39,11 @@
             );
         }
         public function addTopic($array){
-            $sql = "INSERT INTO sujet (titreSujet, visiteur_id) VALUE (:titreSujet, :visiteur)"; 
+            $sql = "INSERT INTO topic (title) VALUE (:title)"; 
            
           //  return self::getOneOrNullResult(
             return self::create($sql, [
-                'titreSujet' => $array["titreSujet"],
-                'visiteur' => $array["visiteur"]
+                'title' => $array["title"],
           //    'user_id' => Session::getUser()->getId(),
 
             ]);

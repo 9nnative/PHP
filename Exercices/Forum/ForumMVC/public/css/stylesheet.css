@@ -1,1 +1,13 @@
-#home{color: black;}
+
+#formaddpost{
+    display: flex;
+    align-items:center;
+}
+
+.login-register{
+    padding-left: 5em;
+}
+
+#mainsection{
+    background-image: url()
+}

@@ -2,6 +2,8 @@
     namespace App;
 
     use Controller\HomeController;
+    use Controller\ForumController;
+    use Controller\SecurityController;
 
     abstract class Router {
 
