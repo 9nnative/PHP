@@ -8,6 +8,8 @@
     padding-left: 5em;
 }
 
-#mainsection{
-    background-image: url()
+.mainsection{
+    width: 100%;
+    height: 700px;
+    background-image: url(https://github.com/9nnative/PHP/blob/master/Exercices/Forum/ForumMVC/public/img/wallpaper.jpg?raw=true);
 }

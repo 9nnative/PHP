@@ -50,7 +50,7 @@
 </nav>
 
     <!-- ------------------ MAIN ------------------ -->
-    <section id="mainsection">
+   
 
         <div id="wrapper" class="uk-container uk-container-expand">
             <div id="mainPage">
@@ -61,8 +61,7 @@
                     </div>
                 </main>
             </div>
-            
-    </section>
+
 
         <footer>
             <p>

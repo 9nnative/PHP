@@ -1,4 +1,6 @@
-<div class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade" uk-height-viewport>
+
+<section class="mainsection">
+<div class="uk-section  uk-flex uk-flex-middle uk-animation-fade" uk-height-viewport>
 	<div class="uk-width-1-1">
 		<div class="uk-container">
 			<div class="uk-grid-margin uk-grid uk-grid-stack" uk-grid>
@@ -31,3 +33,6 @@
 		</div>
 	</div>
 </div>
+
+
+    </section>
