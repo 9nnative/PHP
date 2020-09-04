@@ -8,8 +8,19 @@
     padding-left: 5em;
 }
 
-.mainsection{
-    width: 100%;
-    height: 700px;
-    background-image: url(https://github.com/9nnative/PHP/blob/master/Exercices/Forum/ForumMVC/public/img/wallpaper.jpg?raw=true);
-}
+.bg-image {
+    /* The image used */
+    background-image: url("");
+    
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    
+    /* Full height */
+    height: 100%; 
+    
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
