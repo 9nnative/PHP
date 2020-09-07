@@ -1,6 +1,6 @@
 <?php
     namespace Model\Manager;
-    
+    use App\Router;
     use App\AbstractManager;
     
     class TopicManager extends AbstractManager
@@ -27,7 +27,7 @@
         }
 
         public function findOneById($id){
-            $sql = "SELECT * 
+            $sql = "SELECT id, title, date, closed, user_id, resolved
                         FROM topic 
                         WHERE id = :id";
             return self::getOneOrNullResult(

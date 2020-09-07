@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://raw.githubusercontent.com/9nnative/PHP/master/Exercices/Forum/ForumMVC/public/js/scripts.js">
-    </script>
-  
 </head>
 <body>
 
 <ul class='uk-list uk-list-divider'>
 
-<?php foreach($data['topics'] as $topic){ ?>
-   <li><a href="?ctrl=forum&method=show&topic_id=<?= $topic->getId() ?>"><?= $topic->getTitle() ?></a></li>
+<?php 
+
+foreach($data['posts'] as $post){?>
+   <li><?= strftime('%H:%M | %d %B %Y', strtotime((new DateTime($post->getDate()))->format('Y-m-d H:i:s')))?><br><a href ="?ctrl=forum&method=show&topic_id=<?= $post->getId() ?>"><?= $post->getText() ?></a></li>
+
     
-    
-<?php } ?>
+    <?php var_dump($post); } ?>
     <p><a class="uk-button uk-button-default" href="?ctrl=home&method=index">Retour</a></p>
 </body>
 </html>

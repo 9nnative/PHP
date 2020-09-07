@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <div class="uk-background-blend-exclusion">
+        <div class="bg-image"></div>
 
-
-    </div>
+        <div class="bg-text">
+        <span uk-icon="icon: github"></span>
+        <p>9nnative</p>
+        </div>
 </body>
 </html>

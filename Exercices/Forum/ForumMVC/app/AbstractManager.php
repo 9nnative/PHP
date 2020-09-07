@@ -38,4 +38,11 @@
             }
             return $stmt->fetch();
         }
+
+        public function createUser($sql, $params = null){
+            $stmt = self::$connection->prepare($sql);
+            $stmt->execute($params);
+        }
+    
+        
     }

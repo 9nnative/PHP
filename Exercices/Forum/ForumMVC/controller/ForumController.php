@@ -6,6 +6,7 @@
     use Model\Manager\TopicManager;
     use Model\Manager\PostManager;
 
+
     class ForumController {
 
         public function index(){
@@ -41,7 +42,7 @@
          */
         public function show(){
 
-            $id = (isset($_GET['id'])) ? $_GET['id'] : null;
+            $id = (isset($_GET['topic_id'])) ? $_GET['topic_id'] : null;
             $manTopic = new TopicManager();
             $manPost = new PostManager();
 
@@ -49,12 +50,12 @@
             $posts = $manPost->findByTopic($id);
             
             return [
-                "view" => "forum/posts.php",
+                "view" => "forum/listPostsByTopics.php",
                 "data" => [
                     "topic" => $topic,
-                    "posts" => $posts,
+                    "posts" => $posts
                 ],
-                "titrePage" => "FORUM | ".$topic
+                "titrePage" => "FORUM | ".$topic->getTitle()
             ];
         }
 
@@ -98,11 +99,35 @@
             ];
         }
 
-        public function LoginForm(){
+        public function allPosts(){
+
+            $manPost = new PostManager();
+            $posts = $manPost->findAll();
+          
             return [
-                "view" => "forum/login_form.php",
-                "data" => null,
-                "titrePage" => "FORUM | Se connecter"
+                "view" => "forum/listPosts.php", 
+                "data" => [
+                    "posts" => $posts
+                ],
+                "titrePage" => "FORUM | Posts"
             ];
         }
+
+        public function detailPost(){
+            
+            $id = (isset($_GET['id'])) ? $_GET['id'] : null;
+            $manPost = new PostManager();
+
+            $posts = $manPost->findOneById($id);
+            
+            return [
+                "view" => "forum/detailPost.php",
+                "data" => [
+                    "posts" => $posts
+                ],
+                "titrePage" => "FORUM | ".$post->getText()
+            ];
+        }
+
+
     }

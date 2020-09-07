@@ -23,7 +23,7 @@
     <div class="uk-navbar-left">
 
         <ul class="uk-navbar-nav">
-            <li class="uk-active"><a href="?ctrl=home&method=index" uk-icon="icon: home">Acceuil&nbsp;</a></li>
+            <li class="uk-active"><a href="?ctrl=home&method=index" uk-icon="icon: home">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Acceuil&nbsp;</a></li>
             <li>
                 <a href="#" uk-icon="icon: menu">Menu&nbsp;</a>
                 <div class="uk-navbar-dropdown">
@@ -43,7 +43,7 @@
     <div class="uk-navbar-right">
         <ul class="uk-navbar-nav">
             <li class="login_register"><a href="?ctrl=security&method=formLogin" uk-icon="icon: sign-in" class="uk-button uk-button-default" type="button" uk-toggle="target: #toggle-usage">Se connecter&nbsp;</a>
-            <li class="login_register"><a href="?ctrl=forum&method=register" uk-icon="icon: file-edit">S'inscrire&nbsp;</a></li>
+            <li class="login_register"><a href="?ctrl=security&method=formRegister" uk-icon="icon: file-edit">S'inscrire&nbsp;</a></li>
 </ul>
 
 </div>
@@ -55,7 +55,15 @@
         <div id="wrapper" class="uk-container uk-container-expand">
             <div id="mainPage">
                 <main>
-                    <h1>FORUM</h1><hr>
+                    <h2>Forum | Progression : <progress max="100" value="73"></progress> </h2><hr>
+                    
+                    <?php
+								if(isset($_SESSION['success'])){
+								echo $_SESSION['success'];
+								unset($_SESSION['success']);
+								}
+							?>
+
                     <div id="page">
                         <?= $page ?>
                     </div>
@@ -64,7 +72,7 @@
 
 
         <footer>
-            <p>
+            <p><br>
                 &copy;2020 - COPYRIGHT - <a href="?ctrl=home&method=rules">Règlement du forum</a> - <a href="?ctrl=home&method=mentions">Mentions légales</a>
             </p>
         </footer>

@@ -1,26 +1,52 @@
 
+* {
+box-sizing: border-box;
+}
+
 #formaddpost{
-    display: flex;
-    align-items:center;
+display: flex;
+align-items:center;
 }
 
 .login-register{
-    padding-left: 5em;
+padding-left: 5em;
 }
 
 .bg-image {
-    /* The image used */
-    background-image: url("");
-    
-    /* Add the blur effect */
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
-    
-    /* Full height */
-    height: 100%; 
-    
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+/* The image used */
+background-image: url("https://github.com/9nnative/PHP/blob/master/Exercices/Forum/ForumMVC/public/img/background.jpg?raw=true");
+
+/* Add the blur effect */
+filter: blur(4px);
+-webkit-filter: blur(4px);
+
+/* Full height */
+height: 20em; 
+width: 100%;
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+.bg-text {
+color: white;
+font-weight: bold;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 2;
+width: 80%;
+padding: 20px;
+text-align: center;
+}
+
+/*Barre de progression*/
+
+.-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
   }

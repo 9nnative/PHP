@@ -1,54 +1,62 @@
-<form action="view/addTopic.php?action=addTopic" method="POST">
-        <label for="pseudoUtilisateur">Pseudo</label>
-        <input class="uk-input" type="text" name="pseudoUtilisateur" id="pseudoUtilisateur">
-        <label for="password">mot de passe</label>
-        <input class="uk-input" type="password" name="password" id="password">
-        <input class="uk-button uk-margin-top" type="submit" value="Ajouter">
-    </form>
 
-<?php  //traitement du formulaire d'inscription
-    session_start();
+<section class="mainsection">
+<div class="uk-section  uk-flex uk-flex-middle uk-animation-fade" uk-height-viewport>
+	<div class="uk-width-1-1">
+		<div class="uk-container">
+			<div class="uk-grid-margin uk-grid uk-grid-stack" uk-grid>
+				<div class="uk-width-1-1@m">
+					<div class="uk-margin uk-width-large uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
+						<h3 class="uk-card-title uk-text-center">Pas encore parmis nous?</h3>
+                                        <p id="message">
+                                            <?php
+                                                if(isset($_SESSION['error'])){
+                                                    echo $_SESSION['error'];
+                                                    unset($_SESSION['error']);
+                                                }
+                                            ?>
+						<form action ="?ctrl=security&method=goRegister" method="POST">
 
-    require "SecurityController.php";
+							<div class="uk-margin">
+								<div class="uk-inline uk-width-1-1">
+									<span class="uk-form-icon" uk-icon="icon: mail"></span>
+									<input type="email" name="email" required class="uk-input uk-form-large">
+								</div>
+							</div>
+                            <div class="uk-margin">
+								<div class="uk-inline uk-width-1-1">
+									<span class="uk-form-icon" uk-icon="icon: user"></span>
+									<input type="username" name="name"  class="uk-input uk-form-large" type="text" required>
+								</div>
+							</div>
+							<div class="uk-margin">
+								<div class="uk-inline uk-width-1-1">
+									<span class="uk-form-icon" uk-icon="icon: lock"></span>
+									<input type="password" name="password" minlength="8" required class="uk-input uk-form-large" minlength="8" required>	
+								</div>
+							</div>
+                            <div class="uk-margin">
+								<div class="uk-inline uk-width-1-1">
+									<span class="uk-form-icon" uk-icon="icon: lock"></span>
+									<input type="password" name="password_r" minlength="8" required class="uk-input uk-form-large" minlength="8" required>	
+								</div>
+							</div>
+							<div class="uk-margin">
+								<input type="submit" value ="S'inscrire" class="uk-button uk-button-primary uk-button-large uk-width-1-1"></input>
+							</div>
+							<div class="uk-text-small uk-text-center">
+								En vous inscrivant, vous acceptez les <a href="?ctrl=home&method=rules">conditions générales du site</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 
-    // --TEST-- //
+    </section>
 
-/*
-        if(!empty($_POST)){
-            
-            $username = filter_input(INPUT_POST, "username", FILTER_VALIDATE_REGEXP, [
-                "options" => ["regexp" => "/^[a-zA-Z0-9]{4,32}/"]
-            ]);
-            $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
-            $password = filter_input(INPUT_POST, "password", FILTER_VALIDATE_REGEXP, [
-                "options" => ["regexp" => "/^[a-zA-Z0-9!_-]{6,48}/"]
-            ]);
-            $password_repeat = filter_input(INPUT_POST, "password_r", FILTER_DEFAULT);
-            $cgu = filter_input(INPUT_POST, "cgu", FILTER_VALIDATE_BOOLEAN);
 
-            $pseudoUtilisateur = filter_input(INPUT_POST, "pseudoUtilisateur", FILTER_DEFAULT);
-            $cgu = filter_input(INPUT_POST, "pseudoUtilisateur", FILTER_VALIDATE_BOOLEAN);
 
-            if($username && $email && $password && $cgu && $pseudoUtilisateur){
-                if($password === $password_repeat){
-
-                    if(registerUser($username, $email, $password, $pseudoUtilisateur)){
-                        
-                        $_SESSION['success'] = "Inscription réussie, connectez-vous !";
-                        header("Location:login.php");
-                        die();
-                    }
-                    else $_SESSION['error'] = "Une erreur système est survenue, veuillez pleurer !";
-                }
-                else $_SESSION['error'] = "Les mots de passe ne correspondent pas...";
-                
-            }
-            else $_SESSION['error'] = "Un ou des champs obligatoires sont manquants ou incorrects...";
-            
-        }
-        else $_SESSION['error'] = "Enfoiré, t'essayes de me pirater c'est ça ?";
-        
-        header("Location: index.php");
-*/
-
+ 
