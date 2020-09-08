@@ -55,7 +55,7 @@
         <div id="wrapper" class="uk-container uk-container-expand">
             <div id="mainPage">
                 <main>
-                    <h2>Forum | Progression : <progress max="100" value="73"></progress> </h2><hr>
+                    <h2>Forum | Progression : <progress max="100" value="74"></progress> </h2><hr>
                     
                     <?php
 								if(isset($_SESSION['success'])){

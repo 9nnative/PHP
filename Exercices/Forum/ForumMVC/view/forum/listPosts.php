@@ -8,8 +8,8 @@
 
 <ul class='uk-list uk-list-divider'>
 
-<?php foreach($data['posts'] as $post){
-   echo "<li>".$post->getText()."</li>";
+<?php foreach($data['post'] as $posts){
+   echo "<li>".$posts->getText()."</li>";
     // var_dump($topic);
     
 } ?>

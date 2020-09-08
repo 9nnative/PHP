@@ -5,7 +5,7 @@
     use App\Router;
     use Model\Manager\TopicManager;
     use Model\Manager\PostManager;
-
+    use Model\Manager\UserManager;
 
     class ForumController {
 
@@ -102,6 +102,7 @@
         public function allPosts(){
 
             $manPost = new PostManager();
+
             $posts = $manPost->findAll();
           
             return [
@@ -116,16 +117,21 @@
         public function detailPost(){
             
             $id = (isset($_GET['id'])) ? $_GET['id'] : null;
+   
             $manPost = new PostManager();
+            $manUser = new UserManager();
 
             $posts = $manPost->findOneById($id);
+         
+            // $user = $manUser->findOneById($user_id);
             
             return [
                 "view" => "forum/detailPost.php",
                 "data" => [
-                    "posts" => $posts
+                    "posts" => $posts,
+                    "user" => $posts->getUser()
                 ],
-                "titrePage" => "FORUM | ".$post->getText()
+                "titrePage" => "FORUM | ".$posts->getID()
             ];
         }
 

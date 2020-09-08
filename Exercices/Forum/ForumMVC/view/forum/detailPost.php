@@ -6,13 +6,21 @@
 </head>
 <body>
 
-<ul class='uk-list uk-list-divider'>
+    <section id="User">
+    <p uk-icon="icon: user"></p>
+    <h3>
+    <?php 
+    echo $data['user']->getName();?>
+    </h3>
+    </section>
 
-<?php 
-   echo "<li>".$post->getText()."</li>";
-    // var_dump($topic);
-    
-} ?>
-    <p><a class="uk-button uk-button-default" href="?ctrl=home&method=index">Retour</a></p>
+<?php
+echo $data['posts']->getText()?>
+<br>
+<?php
+echo $data['posts']->getDate()?>
+
+
+    <a class="uk-button uk-button-default" href="?ctrl=home&method=index">Répondre</a>
 </body>
 </html>

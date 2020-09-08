@@ -11,10 +11,9 @@
 <?php 
 
 foreach($data['posts'] as $post){?>
-   <li><?= strftime('%H:%M | %d %B %Y', strtotime((new DateTime($post->getDate()))->format('Y-m-d H:i:s')))?><br><a href ="?ctrl=forum&method=show&topic_id=<?= $post->getId() ?>"><?= $post->getText() ?></a></li>
+   <li><?= strftime('%H:%M | %d %B %Y', strtotime((new DateTime($post->getDate()))->format('Y-m-d H:i:s')))?><br><a href ="?ctrl=forum&method=detailpost&id=<?= $post->getId() ?>"><?= $post->getText() ?></a></li>
 
     
-    <?php var_dump($post); } ?>
-    <p><a class="uk-button uk-button-default" href="?ctrl=home&method=index">Retour</a></p>
+    <?php } ?>
 </body>
 </html>
