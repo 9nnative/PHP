@@ -39,26 +39,7 @@
             );
         }
         
-        public function managerLogin(){
-                     //traitement du formulaire de connexion
-
-            
-                if(!empty($_POST)){
-                    $username = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
-                    $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-                    if($username && $password){
-                        $user = getName($username, $password);
-                        if($user){
-                            $_SESSION['name'] = $user;
-                            $_SESSION['success'] = "Bienvenue ".$user['name']." !";
-                            header("Location:index.php");
-                        }
-                        else $_SESSION['error'] = "‼ Bad credentials ‼";
-                    }
-                    else $_SESSION['error'] = "‼ Des champs obligatoires sont manquants ou incorrects ‼";
-                }
-                else $_SESSION['error'] = "‼ Enfoiré, t'essayes de me pirater c'est ça ? ‼"; 
-            }
+       
 
 
     
@@ -96,8 +77,26 @@
                 else $_SESSION['error'] = "Vous devez remplir TOUS les champs obligatoires !";
             }
             
-    
+            public function getUserByUsername($username){
+
+            $sql = "SELECT name, password, id 
+                                    FROM user 
+                                    WHERE name = :name";
+                        return self::getOneOrNullResult(
+                            self::select($sql, 
+                                ["name" => $username], 
+                                false
+                            ), 
+                            self::$classname
+                        );
+            
+            }
            // Router::redirectTo();
-    
+     public function managerLogin(){
+                     //traitement du formulaire de connexion
+
+            
+                
+            }
         
     }

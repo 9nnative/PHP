@@ -1,10 +1,13 @@
 <?php
-    namespace Controller;
+
+namespace Controller;
     
     use App\Session;
     use App\Router;
+    use Model\Manager\TopicManager;
+    use Model\Manager\PostManager;
     use Model\Manager\UserManager;
-    
+
     class SecurityController{
 
         public function formLogin(){
@@ -36,13 +39,31 @@
         }
         public function goLogin(){
 
-            $manager = new UserManager();
-            $loginmanager = $manager->ManagerLogin();
+            if(!empty($_POST)){
+                $username = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+                $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+                if($username && $password){
 
-        return [
-            "view" => "security/login.php",
-            "titrePage" => "FORUM | Se connecter"
-        ];
+                    $manUser = new UserManager();
+                    $test = $manUser->getUserByUsername($username);
+
+                    if (password_verify($password, $test->getPassword())) {
+                        $user = $manUser->findOneById($test->getID());
+                        $_SESSION['name'] = $user;
+                        $_SESSION['success'] = "Bienvenue ".$user->getName()." !";
+                        router ::RedirectTo('home', 'index');
+
+                    }
+                    else $_SESSION['error'] = "‼ Bad credentials ‼";
+                }
+                else $_SESSION['error'] = "‼ Des champs obligatoires sont manquants ou incorrects ‼";
+            }
+            else $_SESSION['error'] = "‼ Enfoiré, t'essayes de me pirater c'est ça ? ‼"; 
+
+        // return [
+        //     "view" => "security/login.php",
+        //     "titrePage" => "FORUM | Se connecter"
+        // ];
         }
 
     }

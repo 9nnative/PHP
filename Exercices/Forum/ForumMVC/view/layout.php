@@ -9,7 +9,9 @@
 
     
     <!-- Local CSS -->
-    <link rel="stylesheet" href="https://raw.githubusercontent.com/9nnative/PHP/master/Exercices/Forum/ForumMVC/public/css/stylesheet.css"/>
+    <link rel="stylesheet" href=".\public\css\stylesheet.css"/>
+    <!-- Local JS -->
+    <script src=".\public\js\scripts.js"></script>
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.6/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.6/dist/js/uikit-icons.min.js"></script>

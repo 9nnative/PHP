@@ -40,6 +40,7 @@
 									<input type="password" name="password_r" minlength="8" required class="uk-input uk-form-large" minlength="8" required>	
 								</div>
 							</div>
+
 							<div class="uk-margin">
 								<input type="submit" value ="S'inscrire" class="uk-button uk-button-primary uk-button-large uk-width-1-1"></input>
 							</div>

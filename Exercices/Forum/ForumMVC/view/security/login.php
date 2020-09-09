@@ -26,13 +26,13 @@
 							<div class="uk-margin">
 								<div class="uk-inline uk-width-1-1">
 									<span class="uk-form-icon" uk-icon="icon: user"></span>
-									<input class="uk-input uk-form-large" type="text">
+									<input class="uk-input uk-form-large"  name="name" type="text">
 								</div>
 							</div>
 							<div class="uk-margin">
 								<div class="uk-inline uk-width-1-1">
 									<span class="uk-form-icon" uk-icon="icon: lock"></span>
-									<input class="uk-input uk-form-large" type="password">	
+									<input id="pass_S" name="password" class="uk-input uk-form-large" type="password">	
 								</div>
 								<input type="checkbox" onclick="showPass()">Afficher le mot de passe</input>
 							</div>
