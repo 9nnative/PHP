@@ -53,11 +53,11 @@
                             $_SESSION['success'] = "Bienvenue ".$user['name']." !";
                             header("Location:index.php");
                         }
-                        else $_SESSION['error'] = "Bad credentials !";
+                        else $_SESSION['error'] = "‼ Bad credentials ‼";
                     }
-                    else $_SESSION['error'] = "Des champs obligatoires sont manquants ou incorrects !";
+                    else $_SESSION['error'] = "‼ Des champs obligatoires sont manquants ou incorrects ‼";
                 }
-                else $_SESSION['error'] = "Enfoiré, t'essayes de me pirater c'est ça ?"; 
+                else $_SESSION['error'] = "‼ Enfoiré, t'essayes de me pirater c'est ça ? ‼"; 
             }
 
 

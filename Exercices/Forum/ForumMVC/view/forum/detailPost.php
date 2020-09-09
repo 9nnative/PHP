@@ -16,7 +16,9 @@
 
 <?php
 echo $data['posts']->getText()?>
+
 <br>
+
 <?php
 echo $data['posts']->getDate()?>
 

@@ -30,12 +30,28 @@
                     <ul class="uk-nav uk-navbar-dropdown-nav">
                         <li class="uk-nav-header">Forum</li>
                         <li><a href="?ctrl=forum&method=allTopics" uk-icon="icon: list">Liste des sujets&nbsp;</a></li>
+                        <li><a href="#" uk-icon="icon: quote-right">Ajouter un post&nbsp;</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#" uk-icon="icon: info">Informations&nbsp;</a></li>
+                    </ul>
+                </div>
+                </li>
+            <li>
+              <a href="#" uk-icon="icon: bolt">Administration&nbsp;</a>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li class="uk-nav-header">Administration du forum</li>
+                        <li><a href="#" uk-icon="icon: bookmark">Sujets&nbsp;</a></li>
+                        <li><a href="#" uk-icon="icon: quote-right">Posts&nbsp;</a></li>
+                        <li><a href="#" uk-icon="icon: check">Clore un post&nbsp;</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#" uk-icon="icon: ban">Bannir un utilisateur&nbsp;</a></li>
                         <li><a href="#" uk-icon="icon: users">Utilisateurs inscrits&nbsp;</a></li>
                         <li class="uk-nav-divider"></li>
                         <li><a href="#" uk-icon="icon: info">Informations&nbsp;</a></li>
                     </ul>
                 </div>
-            </li>
+            <li>
 
         </ul>
 

@@ -8,6 +8,11 @@ display: flex;
 align-items:center;
 }
 
+#message{
+display: flex;
+text-align: center;
+}
+
 .login-register{
 padding-left: 5em;
 }
