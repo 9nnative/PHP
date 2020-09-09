@@ -34,6 +34,7 @@
 									<span class="uk-form-icon" uk-icon="icon: lock"></span>
 									<input class="uk-input uk-form-large" type="password">	
 								</div>
+								<input type="checkbox" onclick="showPass()">Afficher le mot de passe</input>
 							</div>
 							<div class="uk-margin">
 								<input type="submit" value ="Connexion" class="uk-button uk-button-primary uk-button-large uk-width-1-1"></input>
