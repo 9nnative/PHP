@@ -10,6 +10,7 @@ class User extends AbstractEntity {
     private $name;
     private $password;
     private $email;
+    private $date;
     private $role;
 
 
@@ -115,6 +116,26 @@ public function getRole()
 public function setRole($role)
 {
     $this->role = $role;
+
+    return $this;
+}
+
+/**
+ * Get the value of date
+ */ 
+public function getDate()
+{
+    return $this->date;
+}
+
+/**
+ * Set the value of date
+ *
+ * @return  self
+ */ 
+public function setDate($date)
+{
+    $this->date = $date;
 
     return $this;
 }

@@ -22,7 +22,7 @@ use App\Router;
     define('ADMIN_MAIL', "admin@forummvc.com"); //mail de l'administrateur
 
     require SERVICE_PATH."Router.php"; // require "./app/Router.php"
-
+    session_start();
     /* ------------------ TEMPORISATION DE SORTIE ------------------ */
     \ob_start();
 

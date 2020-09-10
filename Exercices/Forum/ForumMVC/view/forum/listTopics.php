@@ -12,6 +12,15 @@
 <ul class='uk-list uk-list-divider'>
 
 <?php foreach($data['topics'] as $topic){ ?>
+    <div id="card">
+  <p>
+  <?= $topic->getId()?>
+  </p>
+  <h2>
+    <?= $topic->getTitle() ?>
+  </h2>
+</div>
+
    <li><a href="?ctrl=forum&method=show&topic_id=<?= $topic->getId() ?>"><?= $topic->getTitle() ?></a></li>
     
     

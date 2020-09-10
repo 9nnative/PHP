@@ -1,3 +1,6 @@
+<?php use App\Session; 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +9,9 @@
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.4.6/dist/css/uikit.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700&display=swap" rel="stylesheet">
-
-    
+    <!-- Other External CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Archivo:700&display=swap" rel="stylesheet">
     <!-- Local CSS -->
     <link rel="stylesheet" href=".\public\css\stylesheet.css"/>
     <!-- Local JS -->
@@ -32,7 +36,7 @@
                     <ul class="uk-nav uk-navbar-dropdown-nav">
                         <li class="uk-nav-header">Forum</li>
                         <li><a href="?ctrl=forum&method=allTopics" uk-icon="icon: list">Liste des sujets&nbsp;</a></li>
-                        <li><a href="#" uk-icon="icon: quote-right">Ajouter un post&nbsp;</a></li>
+
                         <li class="uk-nav-divider"></li>
                         <li><a href="#" uk-icon="icon: info">Informations&nbsp;</a></li>
                     </ul>
@@ -58,22 +62,32 @@
         </ul>
 
     </div>
-    <div class="uk-navbar-right">
-        <ul class="uk-navbar-nav">
-            <li class="login_register"><a href="?ctrl=security&method=formLogin" uk-icon="icon: sign-in" class="uk-button uk-button-default" type="button" uk-toggle="target: #toggle-usage">Se connecter&nbsp;</a>
-            <li class="login_register"><a href="?ctrl=security&method=formRegister" uk-icon="icon: file-edit">S'inscrire&nbsp;</a></li>
-</ul>
+    <?php 
+if(!Session::getUser()){
+echo 
+    "<div class='uk-navbar-right'>
+    <ul class='uk-navbar-nav'>
+    <li class='login_register'><a href='?ctrl=security&method=formLogin' uk-icon='icon: sign-in' class='uk-button uk-button-default' type='button' uk-toggle='target: #toggle-usage'>Se connecter&nbsp;</a>
+    <li class='login_register'><a href='?ctrl=security&method=formRegister' uk-icon='icon: file-edit'>S'inscrire&nbsp;</a></li>
+    </ul>
+    </div>";
 
-</div>
+} else {
+echo 
+    "<div class='uk-navbar-right'>
+    <ul class='uk-navbar-nav'>
+    <li class='login_register'><a href='?ctrl=security&method=logout' uk-icon='icon: sign-in' class='uk-button uk-button-default' type='button' uk-toggle='target: #toggle-usage'>Se déconnecter&nbsp;</a>
+    <li class='login_register'><a href='?ctrl=security&method=profil' uk-icon='user: file-edit'>Profil&nbsp;</a></li>
+    </ul>
+    </div>";
+}
+?>
 </nav>
-
     <!-- ------------------ MAIN ------------------ -->
-   
-
         <div id="wrapper" class="uk-container uk-container-expand">
             <div id="mainPage">
                 <main>
-                    <h2>Forum | Progression : <progress max="100" value="74"></progress> </h2><hr>
+                    <h2>Forum | Progression : <progress max="100" value="83"></progress> </h2><hr>
                     
                     <?php
 								if(isset($_SESSION['success'])){
