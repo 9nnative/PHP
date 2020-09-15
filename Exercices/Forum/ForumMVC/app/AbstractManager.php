@@ -43,6 +43,9 @@
             $stmt = self::$connection->prepare($sql);
             $stmt->execute($params);
         }
-    
+        public function createTopic($sql, $params = null){
+            $stmt = self::$connection->prepare($sql);
+            $stmt->execute($params);
+        }
         
     }

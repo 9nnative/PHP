@@ -38,15 +38,25 @@
                 self::$classname
             );
         }
-        public function addTopic($array){
-            $sql = "INSERT INTO topic (title) VALUE (:title)"; 
-           
-          //  return self::getOneOrNullResult(
-            return self::create($sql, [
-                'title' => $array["title"],
-          //    'user_id' => Session::getUser()->getId(),
+        public function addTopic(){
+            $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
+            $stmt =(
+                "INSERT INTO topic (title) ".
+                "VALUES (:title)"
+            );
 
-            ]);
+    self::createTopic ($stmt, ["title" => $title,
+                                "user_id" => $_SESSION['user']->getID()]);
+            $_SESSION['success'] = "Sujet bien ajouté !";
+            header("Location:index.php");
+            die();
+        // }
+        //   //  return self::getOneOrNullResult(
+        //     return self::create($sql, [
+        //         'title' => $array["title"],
+        //   //    'user_id' => Session::getUser()->getId(),
+
+        //     ]);
 
         }
 

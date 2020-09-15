@@ -76,26 +76,22 @@
             $id = (isset($_GET['id'])) ? $_GET['id'] : null;
             $manTopic = new TopicManager();
             //var_dump($_POST["titre"]);
-            $topics = $manTopic->findAll();
-
-
+            $topics = $manTopic->addTopic();
 
             //permet de revenir a la page d'accueil
             //Router::redirectTo("home","index");
 
-           return [
-               "view" => "forum/addTopic.php",
-               "data" => ["topics" =>$topics],
-               "titrePage" => "FORUM | Créer un sujet"
-           ];
+           
             
         
         }
-        
         public function addTopic(){
+            
             return [
                 "view" => "forum/addTopic.php",
-                "titrePage" => "FORUM | Ajouter un topic"
+                "data" => ["topics" =>$topics
+                         ],
+                "titrePage" => "FORUM | Créer un sujet"
             ];
         }
 
